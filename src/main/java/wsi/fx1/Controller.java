@@ -1,5 +1,6 @@
 package wsi.fx1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -11,6 +12,10 @@ public class Controller {
     @FXML TextField tf1;
     @FXML TextField liczbaA;
     @FXML TextField liczbaB;
+
+    @FXML TextField doSumy;
+
+
 
     public void kliked() {
         System.out.println("naciśnięto przycisk:" + tf1.getText());
@@ -60,4 +65,14 @@ public class Controller {
         alert.showAndWait();
     }
 
+    public void liczSume() {
+        String s = doSumy.getText();
+
+        /// zamienić na listę intów (wykorzystać funkcję z Utils)
+
+        /// policzyć sumę
+
+        /// pokazać okno dialogowe z wyliczoną sumą..
+
+    }
 }

@@ -23,4 +23,9 @@
         <TextField fx:id="tf1" editable="false"></TextField>
     </HBox>
 
+    <HBox>
+        <TextField fx:id="doSumy"></TextField>
+        <Button onAction="#liczSume"></Button>
+    </HBox>
+
 </VBox>
