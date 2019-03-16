@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
 
 
 public class Controller {
@@ -11,6 +15,7 @@ public class Controller {
     @FXML TextField tf1;
     @FXML TextField liczbaA;
     @FXML TextField liczbaB;
+    @FXML Stage stage;
 
     public void kliked() {
         System.out.println("naciśnięto przycisk:" + tf1.getText());
@@ -58,6 +63,15 @@ public class Controller {
         alert.setContentText("Tego napisu [" + text + "] nie da się zamienić na liczbę");
 
         alert.showAndWait();
+    }
+
+    public void openFromFile() {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Otwórz plik...");
+        File f = chooser.showOpenDialog(stage);
+        if (f!=null) {
+            //ładowanie z pliku...
+        }
     }
 
 }
