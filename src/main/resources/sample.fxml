@@ -11,7 +11,7 @@
         <Label>B:</Label>
         <TextField fx:id="liczbaB"></TextField>
     </HBox>
-<!--    komentarz -->
+<!--    komentarz 123-->
     <HBox>
         <Button fx:id="b2" onAction="#addNumbers">dodaj</Button>
         <Button fx:id="b3" onAction="#rrrr">podziel</Button>
