@@ -2,7 +2,12 @@ package wsi.fx1;
 
 import com.google.common.base.Splitter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.lang.Integer.valueOf;
+import static java.util.stream.Collectors.toList;
 
 public class Utils {
 
@@ -21,7 +26,20 @@ public class Utils {
      * Funkcja wykorzystuje "Integer.valueOf("12")"
      */
     public static List<Integer> parseIntegersFromCsv(String csv) {
-        return null;
+        List<String> strings = parseListFromCsv(csv);
+        //mamy już listę stringów
+        List<Integer> wynik = new ArrayList<>();
+        for(String s : strings) {
+            wynik.add(valueOf(s));
+        }
+        return wynik;
+    }
+
+    //też możliwy sposób pisania (tzw. stream-y)
+    public static List<Integer> gg(String csv) {
+        return parseListFromCsv(csv).stream()
+                .map(Integer::valueOf)
+                .collect(toList());
     }
 
 
@@ -45,6 +63,8 @@ public class Utils {
         for(String s : lista) {
             System.out.println("{" + s + "}");
         }
+
+        System.out.println(parseIntegersFromCsv("1,3,5,7"));
 
     }
 }
