@@ -6,6 +6,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 
 public class Controller {
     @FXML Button b2;
@@ -61,7 +63,14 @@ public class Controller {
         alert.setTitle("Złe dane wejściwe");
         alert.setHeaderText("Złe dane wejściowe");
         alert.setContentText("Tego napisu [" + text + "] nie da się zamienić na liczbę");
+        alert.showAndWait();
+    }
 
+    private void displayResultDialog(String text) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Wynik");
+        alert.setHeaderText("Wynik obliczń");
+        alert.setContentText(text);
         alert.showAndWait();
     }
 
@@ -69,10 +78,14 @@ public class Controller {
         String s = doSumy.getText();
 
         /// zamienić na listę intów (wykorzystać funkcję z Utils)
+        List<Integer> w = Utils.parseIntegersFromCsv(s);
 
         /// policzyć sumę
+        int sum = 0;
+        for(int i : w) sum += i;
 
         /// pokazać okno dialogowe z wyliczoną sumą..
+        displayResultDialog("Suma:" + sum);
 
     }
 }
