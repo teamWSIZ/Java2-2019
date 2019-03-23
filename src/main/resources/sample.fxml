@@ -24,7 +24,8 @@
     </HBox>
 
     <HBox>
-        <TextField fx:id="doSumy" promptText="wpisz dane csv"></TextField>
+        <TextField fx:id="csvInput" promptText="wpisz dane csv"></TextField>
+        <TextField fx:id="page" promptText="strona ksiazki"></TextField>
         <Button onAction="#liczSume"></Button>
     </HBox>
 

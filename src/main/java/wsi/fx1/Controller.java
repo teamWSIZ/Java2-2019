@@ -1,6 +1,5 @@
 package wsi.fx1;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -15,7 +14,8 @@ public class Controller {
     @FXML TextField liczbaA;
     @FXML TextField liczbaB;
 
-    @FXML TextField doSumy;
+    @FXML TextField csvInput;
+    @FXML TextField page;
 
 
 
@@ -74,18 +74,63 @@ public class Controller {
         alert.showAndWait();
     }
 
+    int computeSum(List<Integer> w) {
+        int sum = 0;
+        for(int i : w) sum += i;
+        return sum;
+    }
+
+    int[] maxMin(List<Integer> w) {
+        //znaleźć największą i najmniejszą
+        int mi = w.get(0);
+        int mx = mi;
+        for(int i : w) {
+            if (i>mx) mx = i;
+            if (i<mi) mi = i;
+        }
+        return new int[]{mi, mx};
+
+    }
+
+    int findChapter(List<Integer> chapters, int page) {
+        //Zadanie: w csv podana jest tablica liczb: długości rozdziałów książki,
+        // oraz dodatkowo podana jest liczba "str", określająca na której stronie książki
+        // znajdujemy się obecnie; trzeba obliczyć któremu rozdziałowi odpowiada ta strona
+        // książki
+        //
+        // przykład [5,8,3,4,4], str=15 --> wynik = 3  (trzeci rozdział zaczyna się na str 13)
+        //
+        int sum = 0;
+        for (int i = 0; i < chapters.size(); i++) {
+            int nsum = sum + chapters.get(i);
+            if (nsum>= page) return i+1;
+            sum = nsum;
+        }
+        return -1;  //should never happen
+    }
+
+    int findMatchingRods(List<Integer> rods) {
+        //Zadanie: dostajemy listę długości prętów (każdy między 1 i 10).
+        // Spawacz ma połączyć pręty, odpowiednio po dwa, tak by długość
+        // zespawanego pręta wynosiła 10; np. może połączyć 3 z 7, ale nie 4 z 7,
+        // ani 3 z 3 z 4 (mogą być tylko dwa pręty na raz).
+        // Obliczyć ile ostatecznie prętów długości 10 uda się zespawać.
+        // Przykład: [1,4,4,6,8,9] --> 2 (połączenia 1-9 oraz 4-6)
+
+        //rozwiązanie:....
+        return -1;
+    }
+
+
     public void liczSume() {
-        String s = doSumy.getText();
+        String s = csvInput.getText();
 
         /// zamienić na listę intów (wykorzystać funkcję z Utils)
         List<Integer> w = Utils.parseIntegersFromCsv(s);
-
-        /// policzyć sumę
-        int sum = 0;
-        for(int i : w) sum += i;
+        int pageInt = Integer.parseInt(page.getText());
 
         /// pokazać okno dialogowe z wyliczoną sumą..
-        displayResultDialog("Suma:" + sum);
+        displayResultDialog("Rozdział:" + findChapter(w, pageInt));
 
     }
 }
