@@ -118,7 +118,17 @@ public class Controller {
         // Przykład: [1,4,4,6,8,9] --> 2 (połączenia 1-9 oraz 4-6)
 
         //rozwiązanie:....
-        return -1;
+        //zał: długości nie są większe niż 10;
+        int[] cnt = new int[11];
+        for(int r : rods) cnt[r]++;
+
+        int result = cnt[10];
+        for (int i = 1; i < 5; i++) {
+            result += Math.min(cnt[i], cnt[10-i]);
+        }
+        result += cnt[5]/2;
+
+        return result;
     }
 
 
@@ -127,10 +137,10 @@ public class Controller {
 
         /// zamienić na listę intów (wykorzystać funkcję z Utils)
         List<Integer> w = Utils.parseIntegersFromCsv(s);
-        int pageInt = Integer.parseInt(page.getText());
+//        int pageInt = Integer.parseInt(page.getText());
 
         /// pokazać okno dialogowe z wyliczoną sumą..
-        displayResultDialog("Rozdział:" + findChapter(w, pageInt));
+        displayResultDialog("Rozdział:" + findMatchingRods(w));
 
     }
 }
