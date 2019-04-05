@@ -4,6 +4,7 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <VBox fx:controller="wsi.fx1.Controller" xmlns:fx="http://javafx.com/fxml">
     <HBox>
         <Label>A:</Label>
@@ -26,7 +27,14 @@
     <HBox>
         <TextField fx:id="csvInput" promptText="wpisz dane csv"></TextField>
         <TextField fx:id="page" promptText="strona ksiazki"></TextField>
-        <Button onAction="#liczSume"></Button>
+        <Button onAction="#liczSume">Rozwiąż</Button>
     </HBox>
+    <Label> Zadanie n->m przez mnożenia przez 2,3</Label>
+    <HBox>
+        <TextField fx:id="csvInput2" promptText="wpisz dane csv"></TextField>
+        <Button onAction="#sprawdzLiczby">Rozwiąż</Button>
+    </HBox>
+
+
 
 </VBox>

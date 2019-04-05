@@ -18,6 +18,8 @@ public class Controller {
     @FXML TextField page;
 
 
+    @FXML TextField csvInput2;
+
 
     public void kliked() {
         System.out.println("naciśnięto przycisk:" + tf1.getText());
@@ -141,6 +143,19 @@ public class Controller {
 
         /// pokazać okno dialogowe z wyliczoną sumą..
         displayResultDialog("Rozdział:" + findMatchingRods(w));
-
     }
+
+    static boolean isPossible(int n, int m) {
+        return true;
+    }
+
+    public void sprawdzLiczby() {
+        String s = csvInput2.getText();
+        List<Integer> w = Utils.parseIntegersFromCsv(s);
+
+        boolean wynik = isPossible(w.get(0), w.get(1));
+        displayResultDialog("Wynik:" + (wynik?"tak":"nie"));
+    }
+
+
 }
