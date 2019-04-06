@@ -1,4 +1,4 @@
-//package wsi.wykop;
+package wsi.various;
 
 import java.util.Scanner;
 

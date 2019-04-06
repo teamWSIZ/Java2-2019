@@ -1,9 +1,8 @@
-package wsi.wykop;
+package wsi.various;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
