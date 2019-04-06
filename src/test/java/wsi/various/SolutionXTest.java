@@ -3,7 +3,9 @@ package wsi.various;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.data.Percentage;
+import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -16,10 +18,17 @@ public class SolutionXTest {
 
     @Before
     public void setUp() throws Exception {
+      System.out.println("uruchamiam before");
         testee = new SolutionX();
     }
 
-    @Test
+    @BeforeClass
+    public static void mainSetup() {
+      System.out.println("zaczynam testy --------");
+    }
+
+
+  @Test
     public void shouldAddSimpleNumbers() {
         //arrange
         int x = 11;
