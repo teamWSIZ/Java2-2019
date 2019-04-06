@@ -45,7 +45,7 @@ public class DiverseStringTest {
   }
   @Test
   public void various1() {
-    assertThat(testee.checkString("fced")).isFalse();
+    assertThat(testee.checkString("fced")).isTrue();
   }
   @Test
   public void various2() {
