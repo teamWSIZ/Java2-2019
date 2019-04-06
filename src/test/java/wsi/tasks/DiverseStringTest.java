@@ -25,11 +25,15 @@ public class DiverseStringTest {
   }
   @Test
   public void twoLettersAtDistance() {
-    assertThat(testee.checkString("ac")).isTrue();
+    assertThat(testee.checkString("ac")).isFalse();
   }
   @Test
   public void twoAdjacentLetters() {
     assertThat(testee.checkString("ba")).isTrue();
+  }
+  @Test
+  public void threeAdjacentLetters() {
+    assertThat(testee.checkString("cba")).isTrue();
   }
   @Test
   public void allLetters() {
@@ -41,7 +45,7 @@ public class DiverseStringTest {
   }
   @Test
   public void various1() {
-    assertThat(testee.checkString("fced")).isTrue();
+    assertThat(testee.checkString("fced")).isFalse();
   }
   @Test
   public void various2() {
