@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.util.List;
 
@@ -166,5 +169,21 @@ public class Controller {
 
     public void myOpenFile(ActionEvent actionEvent) {
         //stub
+    }
+
+    public void showAboutDialog(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        ImageView view = new ImageView(new Image("hacked.jpg"));
+        view.setFitHeight(225);
+        view.setFitWidth(540);
+        alert.setGraphic(view);
+        //https://code.makery.ch/blog/javafx-dialogs-official/
+
+        alert.setTitle("About this app");
+//        alert.setHeaderText("Rockets are heading to your location; take cover now!");
+//        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+//        stage.getIcons().add(new Image("missile.png")); // To add an icon
+        alert.showAndWait();
+
     }
 }

@@ -11,6 +11,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.CheckMenuItem?>
 <VBox fx:controller="wsi.fx1.Controller" xmlns:fx="http://javafx.com/fxml">
+
     <MenuBar fx:id="menuBar" onKeyPressed="#sayIt">
         <menus>
             <Menu text="File">
@@ -50,7 +51,7 @@
                     <MenuItem disable="true" text="Search" />
                     <MenuItem text="Online Manual" visible="false" />
                     <SeparatorMenuItem />
-                    <MenuItem onAction="#sayIt" text="About" />
+                    <MenuItem onAction="#showAboutDialog" text="About" />
                 </items>
             </Menu>
         </menus>
