@@ -2,20 +2,22 @@ package wsi.fx1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
 
 public class Controller {
+    @FXML ComboBox kombo;
+    @FXML DatePicker piker;
+    @FXML CheckBox premium;
     @FXML Button b2;
     @FXML TextField tf1;
     @FXML TextField liczbaA;
@@ -201,5 +203,16 @@ public class Controller {
 
         System.out.println("action 2");
         System.out.println("action 2");
+    }
+
+    public void checked(ActionEvent actionEvent) {
+        System.out.println("checkbox checked; state:" + premium.isSelected());
+    }
+
+    public void rezerwuj(ActionEvent actionEvent) {
+        ZoneId zoneId = ZoneId.systemDefault(); // or: ZoneId.of("Europe/Oslo");
+        long epoch = piker.getValue().atStartOfDay(zoneId).toEpochSecond();
+        Instant ii = Instant.ofEpochSecond(epoch);
+        displayResultDialog(ii.toString());
     }
 }

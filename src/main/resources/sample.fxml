@@ -12,6 +12,9 @@
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <VBox fx:controller="wsi.fx1.Controller" xmlns:fx="http://javafx.com/fxml">
 
     <MenuBar fx:id="menuBar" onKeyPressed="#sayIt">
@@ -109,6 +112,13 @@
                 <Button prefWidth="200">
                     Prawy przycisk 3
                 </Button>
+                <CheckBox text="Premium plan" fx:id="premium" onAction="#checked" />
+                <DatePicker fx:id="piker"/>
+                <Button prefWidth="200" onAction="#rezerwuj">
+                    Rezerwuj
+                </Button>
+                <ComboBox fx:id="kombo"></ComboBox>
+
 
             </VBox>
         </right>
