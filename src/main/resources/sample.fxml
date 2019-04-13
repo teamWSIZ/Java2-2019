@@ -10,6 +10,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
 <VBox fx:controller="wsi.fx1.Controller" xmlns:fx="http://javafx.com/fxml">
 
     <MenuBar fx:id="menuBar" onKeyPressed="#sayIt">
@@ -39,7 +41,7 @@
                             <MenuItem mnemonicParsing="false" text="Action 1" />
                             <SeparatorMenuItem mnemonicParsing="false" />
                             <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" onAction="#action2"/>
                         </items>
                     </Menu>
                     <MenuItem text="Cutter" />
@@ -58,35 +60,62 @@
     </MenuBar>
 
 
-    <HBox>
-        <Label>A:</Label>
-        <TextField fx:id="liczbaA"></TextField>
-        <Label>B:</Label>
-        <TextField fx:id="liczbaB"></TextField>
-    </HBox>
-<!--    komentarz 123-->
-    <HBox>
-        <Button fx:id="b2" onAction="#addNumbers">dodaj</Button>
-        <Button fx:id="b3" onAction="#rrrr">podziel</Button>
-        <Button fx:id="bclear" onAction="#clear">clear</Button>
-    </HBox>
+    <BorderPane prefHeight="500.0" prefWidth="800.0">
+        <left>
+            <VBox>
+                <HBox>
+                    <Label>A:</Label>
+                    <TextField fx:id="liczbaA"></TextField>
+                    <Label>B:</Label>
+                    <TextField fx:id="liczbaB"></TextField>
+                </HBox>
+                <HBox>
+                    <Button fx:id="b2" onAction="#addNumbers">dodaj</Button>
+                    <Button fx:id="b3" onAction="#rrrr">podziel</Button>
+                    <Button fx:id="bclear" onAction="#clear">clear</Button>
+                </HBox>
 
-    <HBox>
-        <Label>Wynik:</Label>
-        <TextField fx:id="tf1" editable="false"></TextField>
-    </HBox>
+                <HBox>
+                    <Label>Wynik:</Label>
+                    <TextField fx:id="tf1" editable="false"></TextField>
+                </HBox>
 
-    <HBox>
-        <TextField fx:id="csvInput" promptText="wpisz dane csv"></TextField>
-        <TextField fx:id="page" promptText="strona ksiazki"></TextField>
-        <Button onAction="#liczSume">Rozwiąż</Button>
-    </HBox>
-    <Label> Zadanie n->m przez mnożenia przez 2,3</Label>
-    <HBox>
-        <TextField fx:id="csvInput2" promptText="wpisz dane csv"></TextField>
-        <Button onAction="#sprawdzLiczby">Rozwiąż</Button>
-    </HBox>
+                <HBox>
+                    <TextField fx:id="csvInput" promptText="wpisz dane csv"></TextField>
+                    <TextField fx:id="page" promptText="strona ksiazki"></TextField>
+                    <Button onAction="#liczSume">Rozwiąż</Button>
+                </HBox>
+                <Label> Zadanie n->m przez mnożenia przez 2,3</Label>
+                <HBox>
+                    <TextField fx:id="csvInput2" promptText="wpisz dane csv"></TextField>
+                    <Button onAction="#sprawdzLiczby">Rozwiąż</Button>
+                </HBox>
+            </VBox>
+        </left>
+        <center>
+            <TextArea prefWidth="300" prefHeight="300"></TextArea>
+        </center>
+        <bottom>
+            <Label fx:id="bot"></Label>
+        </bottom>
+        <right>
+            <VBox>
+                <Button prefWidth="200">
+                    Prawy przycisk 1
+                </Button>
+                <Button prefWidth="200">
+                    Prawy przycisk 2
+                </Button>
+                <Button prefWidth="200">
+                    Prawy przycisk 3
+                </Button>
 
+            </VBox>
+        </right>
+
+
+
+    </BorderPane>
 
 
 </VBox>
