@@ -118,6 +118,9 @@
                     Rezerwuj
                 </Button>
                 <ComboBox fx:id="kombo"></ComboBox>
+                <Button prefWidth="200" onAction="#wybierzSamochod">
+                    Wybierz
+                </Button>
 
 
             </VBox>

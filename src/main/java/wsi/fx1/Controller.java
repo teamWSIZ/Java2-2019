@@ -10,8 +10,7 @@ import javafx.stage.Stage;
 
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 public class Controller {
@@ -35,6 +34,21 @@ public class Controller {
     public void initialize() {
         bot.setText("Current time " + (new Date()));
         System.out.println("starting");
+
+        fillCombo();
+    }
+
+    private void fillCombo() {
+        List<Car> cars = Arrays.asList(
+                new Car(1,"Ferrari","458"),
+                new Car(2,"BMW","M3"),
+                new Car(3,"Audi", "RS7"),
+                new Car(4,"Honda", "TypeR"),
+                new Car(5,"SsangYong", "Korando")
+                );
+        Collections.sort(cars, Comparator.comparing(car -> car.brand));
+        kombo.getItems().addAll(cars);
+        kombo.getSelectionModel().select(0);
     }
 
 
@@ -88,7 +102,7 @@ public class Controller {
     private void displayResultDialog(String text) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Wynik");
-        alert.setHeaderText("Wynik obliczń");
+        alert.setHeaderText("Wynik");
         alert.setContentText(text);
         alert.showAndWait();
     }
@@ -192,9 +206,6 @@ public class Controller {
         //https://code.makery.ch/blog/javafx-dialogs-official/
 
         alert.setTitle("About this app");
-//        alert.setHeaderText("Rockets are heading to your location; take cover now!");
-//        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-//        stage.getIcons().add(new Image("missile.png")); // To add an icon
         alert.showAndWait();
 
     }
@@ -214,5 +225,10 @@ public class Controller {
         long epoch = piker.getValue().atStartOfDay(zoneId).toEpochSecond();
         Instant ii = Instant.ofEpochSecond(epoch);
         displayResultDialog(ii.toString());
+    }
+
+    public void wybierzSamochod(ActionEvent actionEvent) {
+        System.out.println(kombo.getSelectionModel().getSelectedItem());
+        displayResultDialog("Wybrano: " + kombo.getSelectionModel().getSelectedItem());
     }
 }
