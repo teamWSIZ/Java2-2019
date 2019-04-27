@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.time.Instant;
@@ -14,6 +16,7 @@ import java.util.*;
 
 
 public class Controller {
+    public BorderPane mainpane;
     @FXML ComboBox kombo;
     @FXML DatePicker piker;
     @FXML CheckBox premium;
@@ -34,6 +37,12 @@ public class Controller {
     public void initialize() {
         bot.setText("Current time " + (new Date()));
         System.out.println("starting");
+
+//        mainpane.setBackground(Background.EMPTY);
+//        Image image = new Image(getClass().getClassLoader().getResource("ac.jpg"));
+//        String style = "-fx-background-color: rgba(255, 255, 150, 0.5);";
+//        String style = "-fx-background-image: url('file:ac.jpg');";
+//        mainpane.setStyle(style);
 
         fillCombo();
     }

@@ -63,7 +63,9 @@
     </MenuBar>
 
 
-    <BorderPane prefHeight="500.0" prefWidth="800.0">
+    <BorderPane prefHeight="500.0" prefWidth="800.0" fx:id="mainpane"
+                style="-fx-background-image: url('ac.jpg')"
+    >
         <left>
             <VBox>
                 <HBox>
