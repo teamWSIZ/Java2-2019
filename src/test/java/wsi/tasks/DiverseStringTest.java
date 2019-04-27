@@ -3,10 +3,12 @@ package wsi.tasks;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Ignore
 public class DiverseStringTest {
   DiverseString testee;
 
