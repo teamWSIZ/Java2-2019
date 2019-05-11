@@ -4,6 +4,11 @@
 }
 
 
-.text-area .content{
-    -fx-background-color: #e8fff0;
+.text-area .viewport, .text-area .content {
+    -fx-background-color: transparent ;
+}
+
+.text-area {
+    -fx-background-color: rgba(53,89,119,0.4);
+    -fx-text-inner-color: white
 }
