@@ -63,9 +63,8 @@
     </MenuBar>
 
 
-    <BorderPane prefHeight="500.0" prefWidth="800.0" fx:id="mainpane"
-                style="-fx-background-image: url('ac.jpg')"
-    >
+    <BorderPane prefHeight="800.0" prefWidth="800.0" fx:id="mainpane"
+                style="-fx-background-image: url('ac.jpg')">
         <left>
             <VBox>
                 <HBox>
@@ -87,7 +86,10 @@
 
                 <HBox>
                     <TextField fx:id="csvInput" promptText="wpisz dane csv"></TextField>
-                    <TextField fx:id="page" promptText="strona ksiazki"></TextField>
+                    <TextField fx:id="page" promptText="strona ksiazki"
+                               style="-fx-background-color: rgba(255,255,255,0.7)">
+
+                    </TextField>
                     <Button onAction="#liczSume">Rozwiąż</Button>
                 </HBox>
                 <Label> Zadanie n->m przez mnożenia przez 2,3</Label>
@@ -98,7 +100,9 @@
             </VBox>
         </left>
         <center>
-            <TextArea prefWidth="300" prefHeight="300"></TextArea>
+            <TextArea prefWidth="300" prefHeight="300"
+                      style="-fx-background-color: yellow"
+            ></TextArea>
         </center>
         <bottom>
             <Label fx:id="bot"></Label>

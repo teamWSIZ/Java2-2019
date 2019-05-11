@@ -28,13 +28,15 @@ public class Controller {
     @FXML TextField csvInput;
     @FXML TextField page;
 
-
     @FXML TextField csvInput2;
     @FXML Label bot;
+
+    @FXML Stage stage;
 
 
     @FXML
     public void initialize() {
+        System.out.println(stage);
         bot.setText("Current time " + (new Date()));
         System.out.println("starting");
 
