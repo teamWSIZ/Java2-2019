@@ -10,9 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import wsi.fx1.model.Car;
+import wsi.fx1.model.Person;
 
 import java.time.Instant;
 import java.time.ZoneId;

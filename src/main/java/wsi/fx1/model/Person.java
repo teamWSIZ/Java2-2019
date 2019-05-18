@@ -1,4 +1,4 @@
-package wsi.fx1;
+package wsi.fx1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

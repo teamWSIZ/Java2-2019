@@ -1,4 +1,4 @@
-package wsi.fx1;
+package wsi.fx1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Car {
-    Integer id;
-    String brand;
-    String model;
+    public Integer id;
+    public String brand;
+    public String model;
 
     @Override
     public String toString() {
