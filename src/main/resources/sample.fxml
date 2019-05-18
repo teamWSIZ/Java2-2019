@@ -89,7 +89,9 @@
             <TextArea prefWidth="300" prefHeight="300"></TextArea>
         </center>
         <bottom>
-            <TableView fx:id="tv"></TableView>
+            <ScrollPane style="-fx-pref-height: 200px; ">
+                <TableView fx:id="tv" style="-fx-pref-width: 400px"></TableView>
+            </ScrollPane>
         </bottom>
         <right>
             <VBox>

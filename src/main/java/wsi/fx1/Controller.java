@@ -67,7 +67,8 @@ public class Controller {
 
         Faker f = new Faker(new Locale("en-US")); //pl, en-UK, ru, ...
         for (int i = 0; i < 10; i++) {
-            tv.getItems().add(new Person(f.name().firstName(), f.name().lastName(), f.job().title()));
+            tv.getItems().add(new Person(f.name().firstName(),
+                    f.name().lastName(), f.job().title()));
         }
     }
 
