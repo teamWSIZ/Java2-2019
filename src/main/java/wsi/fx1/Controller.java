@@ -1,22 +1,30 @@
 package wsi.fx1;
 
+import com.github.javafaker.Faker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.*;
 
+import static java.util.Arrays.asList;
+
+
 
 public class Controller {
     public BorderPane mainpane;
+    @FXML TableView tv;
     @FXML ComboBox kombo;
     @FXML DatePicker piker;
     @FXML CheckBox premium;
@@ -37,7 +45,6 @@ public class Controller {
     @FXML
     public void initialize() {
         System.out.println(stage);
-        bot.setText("Current time " + (new Date()));
         System.out.println("starting");
 
 //        mainpane.setBackground(Background.EMPTY);
@@ -47,10 +54,26 @@ public class Controller {
 //        mainpane.setStyle(style);
 
         fillCombo();
+        initTable();
+    }
+
+    private void initTable() {
+        TableColumn<String, Person> c1 = new TableColumn<>("First name");
+        TableColumn<String, Person> c2 = new TableColumn<>("Last name");
+        TableColumn<String, Person> c3 = new TableColumn<>("Job");
+        c1.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        c2.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        c3.setCellValueFactory(new PropertyValueFactory<>("job"));
+        tv.getColumns().addAll(asList(c1,c2,c3));
+
+        Faker f = new Faker(new Locale("en-US")); //pl, en-UK, ru, ...
+        for (int i = 0; i < 10; i++) {
+            tv.getItems().add(new Person(f.name().firstName(), f.name().lastName(), f.job().title()));
+        }
     }
 
     private void fillCombo() {
-        List<Car> cars = Arrays.asList(
+        List<Car> cars = asList(
                 new Car(1,"Ferrari","458"),
                 new Car(2,"BMW","M3"),
                 new Car(3,"Audi", "RS7"),

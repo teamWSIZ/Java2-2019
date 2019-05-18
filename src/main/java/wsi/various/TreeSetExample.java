@@ -6,7 +6,7 @@ import com.google.common.collect.Multiset;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class A {
+public class TreeSetExample {
     static void testSet(Set<String> r) {
         System.out.println(r.contains("USD"));
         r.remove("USD");

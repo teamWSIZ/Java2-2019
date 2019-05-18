@@ -89,7 +89,7 @@
             <TextArea prefWidth="300" prefHeight="300"></TextArea>
         </center>
         <bottom>
-            <Label fx:id="bot"></Label>
+            <TableView fx:id="tv"></TableView>
         </bottom>
         <right>
             <VBox>
