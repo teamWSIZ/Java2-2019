@@ -21,5 +21,6 @@ public class Voter {
         Voter x = new Voter("a", "a", "a", 12);
         System.out.println(v.equals(x));
         System.out.println(v);
+        System.out.println(v.getPesel());
     }
 }
