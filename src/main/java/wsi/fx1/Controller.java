@@ -265,4 +265,8 @@ public class Controller {
         System.out.println(kombo.getSelectionModel().getSelectedItem());
         displayResultDialog("Wybrano: " + kombo.getSelectionModel().getSelectedItem());
     }
+
+    public void whichSelected() {
+        tv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
 }

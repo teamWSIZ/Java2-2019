@@ -89,9 +89,13 @@
             <TextArea prefWidth="300" prefHeight="300"></TextArea>
         </center>
         <bottom>
-            <ScrollPane style="-fx-pref-height: 200px; ">
-                <TableView fx:id="tv" style="-fx-pref-width: 400px"></TableView>
-            </ScrollPane>
+            <HBox>
+                <ScrollPane style="-fx-pref-height: 200px; ">
+                    <TableView fx:id="tv" style="-fx-pref-width: 400px"></TableView>
+                </ScrollPane>
+                            <Button onAction="#whichSelected">Which?</Button>
+
+            </HBox>
         </bottom>
         <right>
             <VBox>
